@@ -9,7 +9,7 @@
     "babel": "^6.23.0"
   },
   "scripts": {
-    "test": "mocha test.js",
+    "test": "mocha test/test.js",
     "start": "node demo.js"
   },
   "repository": {
