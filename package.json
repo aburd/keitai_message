@@ -1,0 +1,25 @@
+{
+  "name": "keitai-message",
+  "version": "1.0.0",
+  "description": "Code challenge from http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2006　",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "babel": "^6.23.0"
+  },
+  "scripts": {
+    "test": "mocha test.js",
+    "start": "node demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aburd/keitai_message.git"
+  },
+  "author": "Aaron Burdick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aburd/keitai_message/issues"
+  },
+  "homepage": "https://github.com/aburd/keitai_message#readme"
+}
