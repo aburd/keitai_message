@@ -21,7 +21,8 @@ var settings = {
  */
 
 var getOutput = function getOutput(userInput) {
-  var unfilteredInputs = userInput.split(settings.kakuteiBotan);
+  var sanitizedInput = sanitizeInput(userInput);
+  var unfilteredInputs = sanitizedInput.split(settings.kakuteiBotan);
   // kakutei button was not pressed
   if (unfilteredInputs[unfilteredInputs.length - 1] !== '') {
     return '';
@@ -51,6 +52,11 @@ var getCharacter = function getCharacter(individualInput, characterMaps) {
   } else {
     return characterMap.set[index - 1];
   }
+};
+
+var sanitizeInput = function sanitizeInput(input) {
+  var onlyNumbersRegex = /[A-Za-z`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
+  return input.replace(onlyNumbersRegex, '');
 };
 
 var validateInput = function validateInput(input) {
