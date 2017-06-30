@@ -19,7 +19,8 @@ const settings = {
  */
 
 const getOutput = userInput => {
-  const unfilteredInputs = userInput.split(settings.kakuteiBotan);
+  const sanitizedInput = sanitizeInput(userInput);
+  const unfilteredInputs = sanitizedInput.split(settings.kakuteiBotan);
   // kakutei button was not pressed
   if (unfilteredInputs[unfilteredInputs.length - 1] !== '') {
     return '';
@@ -49,6 +50,11 @@ const getCharacter = (individualInput, characterMaps) => {
   } else {
     return characterMap.set[index - 1];
   }
+};
+
+const sanitizeInput = input => {
+  const onlyNumbersRegex = /[A-Za-z`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
+  return input.replace(onlyNumbersRegex, '');
 };
 
 const validateInput = input => {

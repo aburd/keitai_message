@@ -29,7 +29,11 @@ describe('Phone inputs to text output', function() {
     assert.equal(getOutput(inputs.keitai), 'keitai');
   });
 
-  it('Should return "keitai" even with mixed inputss', function() {
+  it('Should return "keitai" even with mixed inputs', function() {
     assert.equal(getOutput(inputs.keitaiMixed), 'keitai');
+  });
+
+  it('Should return "keitai" even with invalid letter inputs', function() {
+    assert.equal(getOutput(inputs.keitaiLetter), 'keitai');
   });
 });
